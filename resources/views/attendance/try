@@ -1,0 +1,54 @@
+
+@extends('layouts.app')
+@section('content')
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Take Attendance</h2>
+  </div>
+<div class="panel-body">
+  <form class="form-inline my-10 my-lg-5 pull-right" method="get" action="{{ url('attendance/store') }}">
+              <input class="form-control mr-sm-2" type="text" placeholder="nomatrik" name="search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ENTER</button>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th width="25%">Matric Number</th>
+              <th width="50%">Student Name</th>
+              <th width="25%">Course</th>
+
+
+            </tr>
+          </thead>
+          <tbody pull-{right}>
+          <?php $i = 0 ?>
+          @forelse($attendances as $attendance)
+          <tr>
+          <td>{{$attendances->firstItem() + $i }}</td>
+          <td>{{ $attendance->nomatrik }}</td>
+          <td>{{ $attendance->namapelajar }}</td>
+          <td>{{ $attendance->kursus }}</td>
+          </tr>
+          <?php $i++ ?>
+          @empty
+          <tr>
+          <td colspan="10">Tiada Data Mangsa yang telah direkodkan .</td>
+          </tr>
+          @endforelse
+          </tbody>
+          </table>
+              </form>
+          {{ $attendances->links() }}
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="{{ asset('js/warning.js') }}"></script>
+@endsection

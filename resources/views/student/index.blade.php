@@ -4,7 +4,7 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h2>Students<a href="{{ url('/registerstudent/create') }}" class="btn btn-info pull-right" role="button">Register Student</a></h2>
+        <h2>Students<a href="{{ url('/registerstudent/create') }}" class="btn btn-info pull-right" role="button">Update Info</a></h2>
 
     </div>
     <div class="panel-body">
@@ -17,7 +17,8 @@
                                 <th>#</th>
                                 <th width="20%">Matric Number</th>
                                 <th width="30%">Student Name </th>
-                                <th width="30%">Course</th>
+                                <th width="30%">Programme</th>
+                                <th width="30%">Year</th>
                                 <th width="20%">Phone Number</th>
 
                                 {{-- <th width="15%">Action</th> --}}
@@ -27,10 +28,11 @@
                                                     <?php $i = 0 ?>
                                                     @forelse($students as $student)
                                                         <tr>
-                                                            <td >{{ $students->firstItem() + $i }}</td>
+
                                                             <td>{{ $student->nomatrik }}</td>
                                                             <td>{{ $student->namapelajar }}</td>
-                                                            <td>{{ $student->kursus }}</td>
+                                                            <td>{{ $student->program }}</td>
+                                                            <td>{{ $student->tahun }}</td>
                                                             <td>{{ $student->nombortelefon }}</td>
                                                             {{-- <td>{{ $student->user->name }}</td> --}}
 
@@ -44,7 +46,7 @@
                                                         <?php $i++ ?>
                                                     @empty
                                                     <tr>
-                                                        <td colspan="6">Looks like there is no post available.</td>
+                                                        <td colspan="6">Looks like there is update here.</td>
                                                     </tr>
 
                                                     @endforelse

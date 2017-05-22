@@ -2,8 +2,9 @@
 
 namespace App;
 
-use App\Like;
 use App\User;
+use App\Daftarsubjek;
+use App\AttendanceList;
 use Illuminate\Database\Eloquent\Model;
 
 class Subject extends Model
@@ -17,6 +18,18 @@ class Subject extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function attendance_lists()
+    {
+        return $this->hasOne(AttendanceList::class);
+    }
+    
+    public function daftarsubjek(){
+
+      return $this->hasMany(Daftarsubjek::class);
+    }
+
+
 
     // public function likes()
     // {

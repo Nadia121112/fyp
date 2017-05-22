@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Subject;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,6 +43,7 @@ class SubjectsController extends Controller
           'codesubject' => 'required',
           'subjectname' => 'required',
           'classtype' => 'required',
+          'day' => 'required',
           'starttime' => 'required',
           'endtime' => 'required',
 
@@ -52,6 +54,7 @@ class SubjectsController extends Controller
       $subject->codesubject = $request->codesubject;
       $subject->subjectname = $request->subjectname;
       $subject->classtype = $request->classtype;
+      $subject->day = $request->day;
       $subject->starttime = $request->starttime;
       $subject->endtime = $request->endtime;
       $subject->user_id = Auth::user()->id;
@@ -97,6 +100,7 @@ class SubjectsController extends Controller
           'codesubject' => 'required',
           'subjectname' => 'required',
           'classtype' => 'required',
+          'day' => 'required',
           'starttime' => 'required',
           'endtime' => 'required',
 
@@ -106,6 +110,7 @@ class SubjectsController extends Controller
       $subject->codesubject = $request->codesubject;
       $subject->subjectname = $request->subjectname;
       $subject->classtype = $request->classtype;
+      $subject->day = $request->day;
       $subject->starttime = $request->starttime;
       $subject->endtime = $request->endtime;
       $subject->save();
@@ -126,5 +131,11 @@ class SubjectsController extends Controller
       $subject->delete();
       return back()->withError('Subject has been successfully deleted');
 
+    }
+
+    public function senaraisubjek (){
+
+      $subjects = Subject::with('user')->paginate(5);
+      return view('subject.senaraisubjek', compact('subjects'));
     }
 }

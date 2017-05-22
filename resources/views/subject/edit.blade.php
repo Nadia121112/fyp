@@ -52,6 +52,24 @@
                               </div>
                           </div>
 
+                          <div class="form-group{{ $errors->has('day') ? ' has-error' : '' }}">
+                              <label class="col-md-2 control-label">Day</label>
+                              <div class="col-md-8">
+                                    <select class="form-control" name="day" rows="3" maxlength="50">{{ $subject->day }}
+                                      <option value="Monday">Monday</option>
+                                      <option value="Tuesday">Tuesday</option>
+                                      <option value="Wednesday">Wednesday</option>
+                                      <option value="Thursday">Thursday</option>
+                                      <option value="Friday">Friday</option>
+                                    </select>
+                                    @if($errors->has('day'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('day') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
                           <div class="form-group{{ $errors->has('starttime') ? ' has-error' : '' }}">
                               <label class="col-md-2 control-label">Start Time</label>
                               <div class="col-md-4">

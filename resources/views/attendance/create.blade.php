@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('content')
 
@@ -7,9 +6,14 @@
     <h2>Take Attendance</h2>
   </div>
 <div class="panel-body">
-  <form class="form-horizontal" action="{{ action('AttendancesController@store')}}" method="POST"
+
+  <form class="form-horizontal" action="{{ action('AttendancesController@store', $id)}}" method="POST"
           enctype="multipart/form-data">
             {{ csrf_field() }}
+
+{{$id}}
+
+
             <div class="form-group{{ $errors->has('nomatrik') ? ' has-error' : '' }}">
               <label class="col-md-2 control-label">Matric Number</label>
               {{-- <input class="form-control mr-sm-2" type="text" placeholder="nomatrik"> --}}
@@ -28,6 +32,8 @@
               </div>
             </div>
 
+            <input type="hidden" name="status" value="presence">
+
 
 </form>
 
@@ -38,35 +44,58 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                          {{-- @foreach ($attendance_lists as $attendance_list) --}}
+
 
                             {{-- <th width="20%">Code Subject</th> --}}
-                            <th width="20%">Matric Number</th>
-                            <th width="20%">Student Name</th>
-                            <th width="20%">Programme</th>
-                            <th width="20%">Created Time</th>
+                            <th width="20%">date</th>
+                            <th width="15%">Matric Number</th>
+                            <th width="35%">Student Name</th>
+                            <th width="25%">Status</th>
 
                         </tr>
                     </thead>
                     <tbody pull-{right}>
-<?php $i=0 ?>
-@foreach($students as $b)
-@foreach($attendance_lists as $a)
 
-      @if($a->nomatrik == $b->nomatrik)
+<?php $i=0 ?>
+{{-- @foreach($daftarsubjeks as $daftarsubjek)
   <tr>
-      {{-- <td>{{$a->codesubject}}</td> --}}
-      <td>{{ $b->nomatrik }}</td>
-      <td>{{ $b->namapelajar }}</td>
-      <td>{{ $b->kursus }}</td>
-      <td>{{ $a->created_at }}</td>
-        @endif
+<td > {{ $loop->iteration}}</td>
+<td>{{  $daftarsubjek->user->userid }}</td>
+<td>{{  $daftarsubjek->user->name }}</td>
+</tr>
+@endforeach --}}
+
+@foreach ($lists as $list)
+  <tr>
+    {{-- <td > {{ $loop->iteration}}</td> --}}
+    <td>{{$list->date}}</td>
+    <td>{{$list->nomatrik}}</td>
+    <td>{{$list->user->name}}</td>
+    <td>{{$list->status}}</td>
+  </tr>
+
+@endforeach
+
+{{-- @foreach($daftarsubjeks as $b)
+@foreach($users as $a)
+
+      @if($a->id == $b->user_id)
+  <tr>
+       <td>{{$a->userid}}</td>
+       <td>{{ $a->name }}</td>
+
+
+    @endif
+
+
     </tr>
+  @endforeach
+@endforeach --}}
 
   <?php $i++ ?>
 
-@endforeach($attendances as $attendance)
 
-@endforeach
 
 </table>
 </div>

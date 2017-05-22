@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -15,9 +16,11 @@ class CreateSubjectsTable extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->increments('id');
+            // $table->integer('idpensyarah')->unsigned();
             $table->string('codesubject');
             $table->string('subjectname');
             $table->string('classtype');
+            $table->string('day');
             $table->string('starttime');
             $table->string('endtime');
 
@@ -25,6 +28,11 @@ class CreateSubjectsTable extends Migration
             // $table->string('subjectname');
 
             $table->timestamps();
+
+            //foreign key
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 

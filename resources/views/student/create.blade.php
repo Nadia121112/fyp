@@ -10,63 +10,55 @@
                 <form class="form-horizontal" action="{{ action('StudentsController@store') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
-                    <div class="form-group{{ $errors->has('nomatrik') ? ' has-error' : '' }}">
+                    <div class="form-group">
                         <label class="col-md-2 control-label">Matric Number</label>
                         <div class="col-md-8">
-                             <input id = "nomatrik" type="text" class="form-control" name="nomatrik" value="{{ old('nomatrik') }}" required autofocus>
-
-                             @if($errors->has('nomatrik'))
-                                 <span class="help-block">
-                                     <strong>{{ $errors->first('nomatrik') }}</strong>
-                                 </span>
-                             @endif
+                          <td>{{Auth ::User()->userid}}</td>
                          </div>
                      </div>
 
-                     <div class="form-group{{ $errors->has('namapelajar') ? ' has-error' : '' }}">
-                         <label class="col-md-2 control-label">Student Name</label>
+                     <div class="form-group">
+                         <label class="col-md-2 control-label">Name</label>
                          <div class="col-md-8">
-                              <input id = "namapelajar" type="text" class="form-control" name="namapelajar" value="{{ old('namapelajar') }}" required autofocus>
-
-                              @if($errors->has('namapelajar'))
-                                  <span class="help-block">
-                                      <strong>{{ $errors->first('namapelajar') }}</strong>
-                                  </span>
-                              @endif
+                           <td>{{Auth ::User()->name}}</td>
                           </div>
                       </div>
 
-                      <div class="form-group{{ $errors->has('kursus') ? ' has-error' : '' }}">
-                          <label class="col-md-2 control-label">Course</label>
-                          <div class="col-md-4">
-                              <select id ="kursus"  type= "text" class="form-control" name="kursus" required autofocus>
+                    
+                      <div class="form-group{{ $errors->has('tahun') ? ' has-error' : '' }}">
+                          <label class="col-md-2 control-label">Tahun Pengajian</label>
+                          <div class="col-md-2">
+                               <input id = "tahun" type="text" class="form-control" name="tahun" value="{{ old('tahun') }}" required autofocus>
 
-                                <option value="SEIS">SEIS</option>
-                                <option value="SEMM">SEMM</option>
-                                <option value="IT">IT</option>
-                                <option value="CS">CS</option>
-                            </select>
-
-                               @if($errors->has('kursus'))
+                               @if($errors->has('tahun'))
                                    <span class="help-block">
-                                       <strong>{{ $errors->first('kursus') }}</strong>
+                                       <strong>{{ $errors->first('tahun') }}</strong>
                                    </span>
                                @endif
                            </div>
                        </div>
 
-                       <div class="form-group{{ $errors->has('set') ? ' has-error' : '' }}">
-                           <label class="col-md-2 control-label">Set Kursus</label>
-                           <div class="col-md-2">
-                                <input id = "set" type="text" class="form-control" name="set" value="{{ old('set') }}" required autofocus>
+                      <div class="form-group{{ $errors->has('program') ? ' has-error' : '' }}">
+                          <label class="col-md-2 control-label">Programme</label>
+                          <div class="col-md-4">
+                              <select id ="program"  type= "text" class="form-control" name="program" required autofocus>
 
-                                @if($errors->has('set'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('set') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                                <option value="SEIS">SOFTWARE ENGINEERING INFORMATION SYSTEM DEVELOPMENT</option>
+                                <option value="SEMM">SOFTWRARE ENGINEERING MULTIMEDIA</option>
+                                <option value="IT">INFORMATION TECHNOLOGY</option>
+                                <option value="CS">COMPUTER SCIENCE</option>
+                            </select>
+
+                               @if($errors->has('program'))
+                                   <span class="help-block">
+                                       <strong>{{ $errors->first('program') }}</strong>
+                                   </span>
+                               @endif
+                           </div>
+                       </div>
+
+
+
                        <div class="form-group{{ $errors->has('nombortelefon') ? ' has-error' : '' }}">
                            <label class="col-md-2 control-label">Phone Number</label>
                            <div class="col-md-8">

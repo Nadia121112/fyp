@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Subject;
 use App\Student;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,9 +13,16 @@ class StudentsController extends Controller
 
     public function index()
     {
+      // $students = Student::all();
+      // foreach ($students as $student) {
+      //   // $subjects= $student->subjek;
+      //   $subjects = explode(' ',$student->subjek );
+      //   dd($subjects);
+
       $students = Student::with('user')->where('user_id',Auth::user()->id)->paginate(5);
       return view('student.index', compact('students'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -34,25 +43,28 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
+
+// $subjeks = $request-> get('subjek');
+
       $this->validate($request, [
-          'nomatrik' => 'required',
-          'namapelajar' => 'required',
-          'kursus' => 'required',
-          'set' => 'required',
+
+          'tahun' => 'required',
+          'program' => 'required',
           'nombortelefon' => 'required',
 
       ]);
 
-      $student = new Student;
-      $student->nomatrik = $request->nomatrik;
-      $student->namapelajar = $request->namapelajar;
-      $student->kursus = $request->kursus;
-      $student->set = $request->set;
-      $student->nombortelefon = $request->nombortelefon;
-      $student->user_id = Auth::user()->id;
-      $student->save();
 
-      return redirect()->action('StudentsController@store')->withMessage('Student has been successfully added');
+        $student = new Student;
+      
+        $student->tahun = $request->tahun;
+        $student->program = $request->program;
+        $student->nombortelefon = $request->nombortelefon;
+        $student->user_id = Auth::user()->id;
+        $student->save();
+
+
+      return redirect()->action('StudentsController@store')->withMessage('Info has been successfully updated');
 
     }
 

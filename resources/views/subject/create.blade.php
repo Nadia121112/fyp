@@ -54,10 +54,30 @@
                            </div>
                        </div>
 
+                       <div class="form-group{{ $errors->has('day') ? ' has-error' : '' }}">
+                           <label class="col-md-2 control-label">Day</label>
+                           <div class="col-md-4">
+                               <select id ="day"  type= "text" class="form-control" name="day" required autofocus>
+
+                                 <option value="Monday">Monday</option>
+                                 <option value="Tuesday">Tuesday</option>
+                                 <option value="Wednesday">Wednesday</option>
+                                 <option value="Thursday">Thursday</option>
+                                 <option value="Friday">Friday</option>
+                             </select>
+
+                                @if($errors->has('day'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('day') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                        <div class="form-group{{ $errors->has('starttime') ? ' has-error' : '' }}">
                            <label class="col-md-2 control-label">Start Time</label>
                            <div class="col-md-4">
-                               <input id ="starttime"  type= "time" class="form-control" name="starttime" required autofocus>
+                               <input id ="starttime"  type= "time" class="form-control" name="starttime" >
 
                                 @if($errors->has('starttime'))
                                     <span class="help-block">
@@ -79,7 +99,7 @@
                                  @endif
                              </div>
                          </div>
-                        
+
 
                      <div class="form-group">
                          <div class="col-sm-offset-2 col-sm-10">

@@ -4,12 +4,31 @@
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        {{-- <h2>Subjects<a href="{{ url('/registersubj/create') }}" class="btn btn-info pull-right" role="button">Register New Subject</a></h2> --}}
+         <h2>List of Subjects</h2>
 
     </div>
     <div class="panel-body">
         <div class="row">
+
+          {{-- <form class="form-horizontal" action="{{action('AttendancesController@create', $subject->id)}}" method="POST" enctype="multipart/from-data">
+            {{ csrf_field() }} --}}
+
+            <div class="form-group{{ $errors->has('date') ? ' has-error' : '' }}">
+              <label for="date" class="col-md-2 control-label">Date</label>
+                <div class="col-md-8">
+                  <input id="date" class="form-control" type="date" name="date" value="{{ old('date') }}">
+
+                  @if($errors->has('date'))
+                  <span class="help-block">
+                    <strong>{{ $errors->first('date') }}</strong>
+                  </span>
+                  @endif
+                </div>
+            </div>
+
             <div class="col-md-12">
+
+
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
@@ -38,8 +57,7 @@
                                                             <td>{{ $subject->user->name }}</td>
                                                             <td>
                                                               @if( $subject->user_id == Auth::user()->id)
-                                                                  <a href="{{ action('AttendancesController@create',   $subject->id) }}" class="btn btn-primary btn-sm">Take</a>
-
+                                                            <a href="{{ action('AttendancesController@create', $subject->id) }}" class="btn btn-primary btn-sm">Take</a>
                                                               @endif
                                                             </td>
                                                         </tr>
@@ -55,6 +73,7 @@
                                                        {{ $subjects->links() }}
                                                    </div>
                                                </div>
+                                             {{-- </form> --}}
                                            </div>
                                        </div>
                                    </div>

@@ -17,8 +17,9 @@ class CreateStudentsTable extends Migration
           $table->increments('id');
           $table->string('nomatrik');
           $table->string('namapelajar');
-          $table->string('kursus');
-          $table->string('set');
+          $table->string('tahun');
+          $table->string('program');
+          $table->string('subjek');
           $table->string('nombortelefon');
 
 

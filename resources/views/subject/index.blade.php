@@ -18,6 +18,7 @@
                                 <th width="10%">Subject Code</th>
                                 <th width="30%">Subject Name</th>
                                 <th width="10%">Class Type</th>
+                                <th width="10%">Day</th>
                                 <th width="10%">Start Time</th>
                                 <th width="10%">End Time</th>
                                 <th width="5%">By</th>
@@ -32,10 +33,11 @@
                                                             <td>{{ $subject->codesubject }}</td>
                                                             <td>{{ $subject->subjectname }}</td>
                                                             <td>{{ $subject->classtype }}</td>
+                                                            <td>{{ $subject->day }}</td>
                                                             <td>{{ $subject->starttime }}</td>
                                                             <td>{{ $subject->endtime }}</td>
-
                                                             <td>{{ $subject->user->name }}</td>
+
                                                             <td>
                                                             @if( $subject->user_id == Auth::user()->id)
                                                                 <a href="{{ action('SubjectsController@edit',   $subject->id) }}" class="btn btn-primary btn-sm">Edit</a>

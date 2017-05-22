@@ -1,6 +1,8 @@
 <?php
 
-use App\Post;
+use App\Subject;
+use App\AttendanceList;
+
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
@@ -14,15 +16,16 @@ class User extends Authenticatable
     //     'name', 'email', 'password',
     // ];
 
-    public function post()
+    public function subject()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Subject::class);
     }
 
-    public function likes()
+    public function attendance_list()
     {
-        return $this->belongsToMany(Post::class, 'likes');
+        return $this->hasMany(AttendanceList::class);
     }
+
 
     // protected $hidden = [
     //     'password', 'remember_token',

@@ -7,7 +7,8 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+{{-- calendar --}}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <meta charset="utf-8">
@@ -17,11 +18,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Smart Attendance') }}</title>
+    <title>{{ config('app.name', 'e-Hadir') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -46,7 +47,7 @@
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}" >
                       <i class ="glyphicon glyphicon-education"></i>
-                        {{ config('app.name', 'Smart Attendance') }}
+                        {{ config('app.name', 'e-Hadir') }}
                     </a>
 
                 </div>
@@ -58,7 +59,14 @@
                         <li><a href="{{ url('/home') }}"><span class ="glyphicon glyphicon-home" ></span>Home </a></li>
                         <li><a href="{{ url('/registersubj')}}"><span class ="glyphicon glyphicon-book"></span>Subjects</a></li>
                         <li><a href="{{ url('/attendance') }}"><span class="glyphicon glyphicon-check"></span>Attendance</a></li>
-                        <li><a href="{{ url('/registerstudent') }}"><span class="glyphicon glyphicon-check"></span>Student</a></li>
+                        <li><a href="{{ url('/senaraisubjek') }}"><span class="glyphicon glyphicon-check"></span>Class</a></li>
+                        <li><a href="{{ url('/daftarsubjek') }}"><span class="glyphicon glyphicon-check"></span>Jadual</a></li>
+                        <li><a href="{{ url('/listsubjek') }}"><span class="glyphicon glyphicon-check"></span>Senarai</a></li>
+                        <li><a href="{{ url('/updateinfo') }}"><span class="glyphicon glyphicon-check"></span>Profile</a></li>
+                        <li><a href="{{ url('/registerstudent') }}"><span class="glyphicon glyphicon-check"></span>Account</a></li>
+
+
+
 
                     </ul>
 
@@ -145,6 +153,14 @@
        });
    </script>
    <script src="{{ asset('js/add-image.js') }}"></script>
+
+   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
     @yield('scripts')
 
 

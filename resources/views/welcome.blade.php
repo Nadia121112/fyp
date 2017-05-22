@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SmartAttendance</title>
+    <title>e-Hadir</title>
     <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
@@ -29,7 +29,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Smart<span>Attendance</span></a>
+        <a class="navbar-brand" href="index.html">e-<span>Hadir</span></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
@@ -102,8 +102,8 @@
               </div>
               <div class="intro-para text-center quote">
                 <p class="big-text">Learning Today . . . Leading Tomorrow.</p>
-                <p class="small-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium enim repellat sapiente quos architecto<br>Laudantium enim repellat sapiente quos architecto</p>
-                <a href="#." class="btn">GET A QUOTE</a>
+
+
               </div>
 
             </div>
@@ -179,7 +179,7 @@
             <div class="pm-staff-profile-container" >
               <div class="pm-staff-profile-image-wrapper text-center">
                 <div class="pm-staff-profile-image">
-                  <img src="img/mentor.jpg" alt="" class="img-thumbnail img-circle" />
+                  <img src="img/dekan.jpg" alt="" class="img-thumbnail img-circle" />
                 </div>
               </div>
               <div class="pm-staff-profile-details text-center">
@@ -194,7 +194,7 @@
             <div class="pm-staff-profile-container" >
               <div class="pm-staff-profile-image-wrapper text-center">
                 <div class="pm-staff-profile-image">
-                  <img src="img/mentor.jpg" alt="" class="img-thumbnail img-circle" />
+                  <img src="img/drrozi.jpg" alt="" class="img-thumbnail img-circle" />
                 </div>
               </div>
               <div class="pm-staff-profile-details text-center">
@@ -209,7 +209,7 @@
             <div class="pm-staff-profile-container" >
               <div class="pm-staff-profile-image-wrapper text-center">
                 <div class="pm-staff-profile-image">
-                    <img src="img/mentor.jpg" alt="" class="img-thumbnail img-circle" />
+                    <img src="img/dekan.jpg" alt="" class="img-thumbnail img-circle" />
                 </div>
               </div>
               <div class="pm-staff-profile-details text-center">
@@ -225,78 +225,32 @@
     </section>
     <!--/ Faculity member-->
     <!--Testimonial-->
-    <section id="testimonial" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="header-section text-center">
-            <h2 class="white">See What Our Customer Are Saying?</h2>
-            <p class="white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
-            <hr class="bottom-line bg-white">
-          </div>
-          <div class="col-md-6 col-sm-6">
-            <div class="text-comment">
-              <p class="text-par">"Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, nec sagittis sem"</p>
-              <p class="text-name">Abraham Doe - Creative Dırector</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-6">
-            <div class="text-comment">
-              <p class="text-par">"Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, nec sagittis sem"</p>
-              <p class="text-name">Abraham Doe - Creative Dırector</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <!--/ Testimonial-->
     <!--Courses-->
     <!--/ Courses-->
     <!--Pricing-->
     <!--/ Pricing-->
-    <!--Contact-->
+     <!--Contact-->
     <section id ="contact" class="section-padding">
       <div class="container">
         <div class="row">
           <div class="header-section text-center">
             <h2>Contact Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
-            <hr class="bottom-line">
+            <br><br>Faculty of Information Science & Technology, <br>Universiti Kebangsaan Malaysia, 43600 UKM, Bangi Selangor, MALAYSIA<br><br>
+ Admission Requirement : Undergraduate: +6 03 - 8921 6789/6183/6787 <br>
+ Admission Requirement : Postgraduate: +6 03 - 8921 6812/6184 <br>
+ Administration : +6 03 - 8921 6141 <br>
+ Fax: +6 03 - 8925 6732 <br>
+
           </div>
-          <div id="sendmessage">Your message has been sent. Thank you!</div>
-          <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
-              <div class="col-md-6 col-sm-6 col-xs-12 left">
-                <div class="form-group">
-                    <input type="text" name="name" class="form-control form" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                    <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                    <div class="validation"></div>
-                </div>
-              </div>
 
-              <div class="col-md-6 col-sm-6 col-xs-12 right">
-                <div class="form-group">
-                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                    <div class="validation"></div>
-                </div>
-              </div>
 
-              <div class="col-xs-12">
-                <!-- Button -->
-                <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">SEND EMAIL</button>
-              </div>
-          </form>
+
 
         </div>
       </div>
     </section>
-    <!--/ Contact-->
+    <!--/ Contact--> --}}
     <!--Footer-->
     <footer id="footer" class="footer">
       <div class="container text-center">
